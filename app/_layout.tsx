@@ -4,7 +4,7 @@ import { ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { TamaguiProvider, Theme, ToastProvider } from "tamagui";
+import { TamaguiProvider, Theme } from "tamagui";
 
 import config from "../tamagui.config";
 import { emerald, zinc } from "../utils/colors";
@@ -37,15 +37,13 @@ export default function Layout() {
     >
       <TamaguiProvider config={config}>
         <Theme name={colorScheme}>
-          <ToastProvider native={["mobile"]}>
-            <SafeAreaView style={{ flex: 1 }}>
-              <Stack
-                screenOptions={{
-                  headerShown: false
-                }}
-              />
-            </SafeAreaView>
-          </ToastProvider>
+          <SafeAreaView style={{ flex: 1 }}>
+            <Stack
+              screenOptions={{
+                headerShown: false
+              }}
+            />
+          </SafeAreaView>
         </Theme>
         <StatusBar
           style="light"
